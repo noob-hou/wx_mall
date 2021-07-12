@@ -1,0 +1,5 @@
+<view class="sreach">
+    <navigator url="/pages/sreach/sreach" open-type="navigate">
+        搜索
+    </navigator>
+</view>

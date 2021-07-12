@@ -1,0 +1,48 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/category/category",
+        "pages/user/user",
+        "pages/cart/cart",
+        "pages/goods_list/goods_list",
+        "pages/goods_detail/goods_detail",
+        "pages/collect//collect", 
+        "pages/order/order",
+        "pages/sreach/sreach",
+        "pages/feedback/feedback",
+        "pages/login/login",
+        "pages/auth/auth",
+        "pages/pay/pay"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#eb4450",
+        "navigationBarTitleText": "品优购",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "list": [{
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "iconPath": "./icon/zhuye.png",
+            "selectedIconPath": "./icon/house__easyic.png"
+        }, {
+            "pagePath": "pages/category/category",
+            "text": "分类",
+            "iconPath": "./icon/leimupinleifenleileibie.png",
+            "selectedIconPath": "./icon/fenlei.png"
+        }, {
+            "pagePath": "pages/cart/cart",
+            "text": "购物车",
+            "iconPath": "./icon/gouwuche_1.png",
+            "selectedIconPath": "./icon/gouwuche.png"
+        }, {
+            "pagePath": "pages/user/user",
+            "text": "用户",
+            "iconPath": "./icon/biaoqiankuozhan_wode-360.png",
+            "selectedIconPath": "./icon/wode_huaban1.png"
+        }]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "SreachInput":"../../components/sreachInput/SreachInput"
+    },
+    "navigationBarTitleText": "首页"
+}
