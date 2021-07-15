@@ -11,8 +11,7 @@
         "pages/sreach/sreach",
         "pages/feedback/feedback",
         "pages/login/login",
-        "pages/auth/auth",
-        "pages/pay/pay"
+        "pages/auth/auth"
     ],
     "window": {
         "backgroundTextStyle": "light",

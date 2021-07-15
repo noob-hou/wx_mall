@@ -1,2 +1,64 @@
-<!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view class="cart">
+  <view class="get_address" wx:if="{{!address.userName}}">
+    <button type="primary" plain bindtap="getReceiveAddress">获取收获地址</button>
+  </view>
+  <view class="receive_address" wx:else>
+   <view class="info-improtant">
+    <text class="name">{{address.userName}}</text><text class="tel">{{address.telNumber}}</text>
+   </view>
+   <view class="address">
+    <text>{{address.provinceName}} </text><text>{{address.cityName}} </text><text>{{address.countyName}} </text><text>{{address.detailInfo}} </text>
+   </view>
+  </view>
+  <view class="cart_shop">
+   <view class="cart-title">我的购物车</view>
+   <view class="cart-main">
+    <block wx:if="{{cartListData.length!==0}}">
+      <view class="cart-item" wx:for="{{cartListData}}" wx:key="index">
+     <view class="cart-checkbox">
+      <checkbox-group  bindchange="checkChange" data-index="{{index}}">
+      <checkbox checked="{{item.checked}}"></checkbox>
+     </checkbox-group>
+     </view>
+     <navigator class="cart-image">
+      <image mode="widthFix" src="{{item.pics[0].pics_big}}"></image>
+     </navigator>
+     <view class="cart-info">
+      <view class="cart-item-name">{{item.goods_name}}</view>
+      <view class="cart-item-price">
+       <view class="item-price">￥{{item.goods_price}}</view>
+       <view class="item-num">
+        <view class="add" bindtap="changeNum" data-index="{{index}}" data-change="-1">-</view>
+        <view class="num">{{item.num}}</view>
+        <view class="sub" bindtap="changeNum" data-index="{{index}}" data-change="1">+</view>
+       </view>
+      </view>
+      <view class="delete-shop" bindtap="deleteShop" data-index="{{index}}">删除</view>
+     </view>
+    </view>
+    </block>
+    <block wx:else class="cart-null">
+     <image src="../../lib/webp.png" style="height:100%"></image>
+    </block>
+   </view>
+  </view>
+  <view class="footer_tool">
+  <!-- 全选 -->
+  <view class="all_chk_wrap">
+    <checkbox-group bindchange="allCheckChange">
+      <checkbox checked="{{allChecked}}">全选</checkbox>
+    </checkbox-group>
+  </view>
+  <!-- 总价格 -->
+  <view class="total_price_wrap">
+    <view class="total_price">
+      合计: <text class="total_price_text">￥{{totalPrice}}</text>
+    </view>
+    <view>包含运费</view>
+  </view>
+  <!-- 结算 -->
+  <view class="order_pay_wrap" bindtap="payClick">
+    结算({{totalNum}})
+  </view>
+  </view>
+</view>

@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "SreachInput":"../../components/sreachInput/SreachInput"
+  },
+  "navigationBarTitleText": "商品分类"
 }

@@ -1,1 +1,49 @@
-/* pages/categrory/category.wxss */
+.nav-list {
+  height: 100%;
+  display: flex;
+}
+.nav-list .list-left {
+  height: 100vh;
+  flex: 2;
+  background-color: #9e9e9e1a;
+}
+.nav-list .list-left .list-left-item {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.nav-list .list-left .active {
+  background-color: #fff;
+  color: #eb4450;
+  border-left: 4px solid #eb4450;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.nav-list .list-right {
+  height: 100vh;
+  flex: 5;
+}
+.nav-list .list-right .right-item .right-item-title {
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 40rpx;
+}
+.nav-list .list-right .right-item .right-item-product {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-list .list-right .right-item .right-item-product navigator {
+  width: 33.33%;
+  padding: 20rpx;
+}
+.nav-list .list-right .right-item .right-item-product navigator image {
+  float: left;
+  width: 100%;
+}
+.nav-list .list-right .right-item .right-item-product navigator view {
+  text-align: center;
+}

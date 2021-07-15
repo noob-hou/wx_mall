@@ -1,0 +1,51 @@
+.nav-list{
+    height: 100%;
+    display: flex;
+    .list-left{
+        height: 100vh;
+        flex: 2;
+        background-color: #9e9e9e1a;
+        .list-left-item{
+            height: 80rpx;
+            line-height: 80rpx;
+            text-align: center;
+        }
+        .active{
+            background-color: #fff;
+            color: #eb4450;
+            border-left: 4px solid #eb4450;
+            height: 80rpx;
+            line-height: 80rpx;
+            text-align: center;
+        }
+    }
+    .list-right{
+        height: 100vh;
+        flex: 5;
+        .right-item{
+            .right-item-title{
+                text-align: center;
+                height: 90rpx;
+                line-height: 90rpx;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 40rpx;
+            }
+            .right-item-product{
+                display: flex;
+                flex-wrap: wrap;
+               navigator{
+                width: 33.33%;
+                padding: 20rpx;
+                image{
+                    float: left;
+                    width: 100%;
+                }
+                view{
+                    text-align: center;
+                }
+               }
+            }
+        }
+    }
+}

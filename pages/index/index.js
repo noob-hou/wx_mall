@@ -1,26 +1,55 @@
+import { request } from '../../request/index.js'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        swiperList: []
+        swiperList: [],
+        navList: [],
+        floorList: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        var reqTask = wx.request({
-            url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
-            success: (result) => {
-                console.log(result);
-            }
-
-        });
+        this.getSwiperList()
+        this.getNavData()
+        this.getFloorData()
+    },
+    // 获取轮播图数据
+    getSwiperList() {
+        request({ url:'/home/swiperdata' }).then(res => {
+            this.setData({
+                swiperList: res.data.message
+            })
+        })
+    },
+    // 获取导航栏数据
+  getNavData() {
+        request({ url: '/home/catitems' }).then(res => {
+            this.setData({
+                navList: res.data.message
+            })
+        })
 
     },
-
+    //获取楼层数据
+    getFloorData() {
+        request({ url: '/home/floordata'}).then(res => {
+        const floorList = res.data.message
+        floorList.forEach(item=>{
+            item.product_list.forEach(item1=>{
+                item1.navigator_url=item1.navigator_url.replace(/goods_list/,"goods_list/goods_list")
+                console.log(item1.navigator_url);
+            })
+        })
+            this.setData({
+                floorList
+            })
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
